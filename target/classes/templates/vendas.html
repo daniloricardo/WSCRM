@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Spring</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
+	<meta charset="utf-8" />
+</head>
+<body>
+	<h1>Vendas</h1>
+	<a href="vendas">vendas</a>
+	        <table class="table table-bordered" width="100%" id="fonte">
+					<thead>
+						<tr>
+							<td width="10%">Nr.Documento</td>
+							<td width="10%">Dt.Emissão</td>
+							<td width="50%">Pessoa</td>
+							<td width="15%">UF</td>
+							<td width="15%">Valor</td>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="venda : ${vendas}">
+							<td th:text="${venda.nrdocumento}"></td>
+							<td th:text="${#dates.format(venda.dtemissao,'dd/MM/yyyy')}"></td>
+							<td th:text="${venda.nmpessoa}"></td>
+							<td th:text="${venda.iduf}"></td>
+							<td th:class="direita"
+								th:text="${#numbers.formatDecimal(venda.total,1,2)}"></td>
+								</tr>
+					</tbody>
+				</table>
+</body>
+</html>

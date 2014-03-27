@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Spring</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
+</head>
+<body>
+	<h1>Produtos</h1>
+	<a href="produtos">produtos</a>
+	<ul>
+            <li th:each="client : ${produtos}">
+                <span th:text="${client}">
+                  </span>
+            </li>
+        </ul>
+</body>
+</html>
